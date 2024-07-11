@@ -38,7 +38,7 @@ const Link = () => {
     fnGetUrl(), fnGetClicksForUrl();
   }, []);
 
-  const TRIMMER = "https://trimmer/in/";
+  const TRIMMER = "https://trimitnow.netlify.app/";
 
   let link = "";
   if (urlData) {
@@ -89,7 +89,7 @@ const Link = () => {
               variant="ghost"
               onClick={() =>
                 navigator.clipboard.writeText(
-                  `https://trimmer.in/${url?.short_url}`
+                  `https://trimitnow.netlify.app/${url?.short_url}`
                 )
               }
             >

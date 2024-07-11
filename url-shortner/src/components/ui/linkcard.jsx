@@ -36,7 +36,7 @@ const LinkCard = ({ url, fetchUrls }) => {
           {url.title}
         </span>
         <span className="text-xl text-wrap sm:text-2xlfont-bold hover:underline text-purple-500 cursor-pointer">
-          https://trimmer.in/{url?.custom_url ? url?.custom_url : url?.s}
+        https://trimitnow.netlify.app/{url?.custom_url ? url?.custom_url : url?.s}
         </span>
         <span className="flex items-center hover:underline gap-1 cursor-pointer">
           {url?.original_url}
@@ -50,7 +50,7 @@ const LinkCard = ({ url, fetchUrls }) => {
           variant="ghost"
           onClick={() =>
             navigator.clipboard.writeText(
-              `https://trimmer.in/${url?.short_url}`
+              `https://trimitnow.netlify.app/${url?.short_url}`
             )
           }
         >
