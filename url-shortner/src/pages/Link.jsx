@@ -42,7 +42,9 @@ const Link = () => {
 
   let link = "";
   if (urlData) {
+    console.log("urlData",urlData)
     link = urlData?.custom_url ? urlData?.custom_url : urlData?.short_url;
+    console.log("linkkkk",link);
   }
 
   if (errorDeleteUrl) {
@@ -71,14 +73,18 @@ const Link = () => {
         <div className="flex flex-col items-start gap-8 rounded-lg sm:w-2/5">
           <span className="text-6xl font-extrabold hover:underline cursor-pointer">
             {urlData?.title}
+            {console.log("TRIMMER + link",TRIMMER + link)}
           </span>
-          <a target="_blank" href={`${TRIMMER}${link}`} className="">
-            {TRIMMER + link}
+          <a target="_blank" 
+          // href={`https://trimrr.in/${link}`}
+
+          href={`https://trimitnow.netlify.app/${link}`} className="text-3xl font-bold hover:underline cursor-pointer sm:text-4xl text-blue-400">
+            {`https://trimitnow.netlify.app/${link}`}
           </a>
           <a
             href={urlData?.original_url}
             target="_blank"
-            className="text-3xl font-bold hover:underline cursor-pointer sm:text-4xl text-blue-400 "
+            className=""
           >
             {urlData?.original_url}
             <LinkIcon className="p-1" />
@@ -89,7 +95,7 @@ const Link = () => {
               variant="ghost"
               onClick={() =>
                 navigator.clipboard.writeText(
-                  `https://trimitnow.netlify.app/${url?.short_url}`
+                  `https://trimitnow.netlify.app/${urlData?.short_url}`
                 )
               }
             >
