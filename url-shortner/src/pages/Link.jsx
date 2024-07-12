@@ -39,7 +39,7 @@ const Link = () => {
   }, []);
 
   const TRIMMER = "https://trimitnow.netlify.app/";
-
+  const location = window.location.origin;
   let link = "";
   if (urlData) {
     console.log("urlData",urlData)
@@ -73,18 +73,17 @@ const Link = () => {
         <div className="flex flex-col items-start gap-8 rounded-lg sm:w-2/5">
           <span className="text-6xl font-extrabold hover:underline cursor-pointer">
             {urlData?.title}
-            {console.log("TRIMMER + link",TRIMMER + link)}
           </span>
           <a target="_blank" 
           // href={`https://trimrr.in/${link}`}
 
-          href={`https://trimitnow.netlify.app/${link}`} className="text-3xl font-bold hover:underline cursor-pointer sm:text-4xl text-blue-400">
-            {`https://trimitnow.netlify.app/${link}`}
+          href={`${location}/${link}`} className="text-3xl font-bold hover:underline cursor-pointer sm:text-4xl text-blue-400">
+            {`https://trimrr.in/${link}`}
           </a>
           <a
             href={urlData?.original_url}
             target="_blank"
-            className=""
+            className="flex items-center gap-1 hover:underline cursor-pointer"
           >
             {urlData?.original_url}
             <LinkIcon className="p-1" />
@@ -95,7 +94,7 @@ const Link = () => {
               variant="ghost"
               onClick={() =>
                 navigator.clipboard.writeText(
-                  `https://trimitnow.netlify.app/${urlData?.short_url}`
+                  `${location}/${urlData?.short_url}`
                 )
               }
             >
