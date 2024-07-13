@@ -68,7 +68,7 @@ const Shape = ({ data }) => {
             data-index={index}
             data-status={status}
             className={classnames(
-              "box",
+              "box rounded-sm",
               status,
               isSelected && "bg-purple-500",
               unloading && "disable-click"
